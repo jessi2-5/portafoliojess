@@ -1,0 +1,663 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root{
+    --bg-body : #10c7d4;
+    --primary-color : #b4cf16;
+    --fontSize-title: 50px;
+    --fontSize-parrafos: 20px;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: "Montserrat", serif;
+}
+
+p,a,li,td,input,label{
+  font-family: "Kanit", sans-serif;
+}
+
+
+
+
+/* Estilos del botón de cambio de tema */
+.btn-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #0ccbe4; /* Color por defecto para el modo claro */
+  cursor: pointer;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+.btn-toggle:hover {
+  color: #00d8ff; /* Color al pasar el ratón */
+  transform: scale(1.1); /* Efecto de agrandamiento al pasar el ratón */
+}
+
+/* Modo oscuro */
+body.dark-theme .btn-toggle {
+  color: #0dd8fc; /* Color del ícono en modo oscuro */
+}
+
+/* Estilo del fondo en modo oscuro */
+body.dark-theme {
+  background-color: #02131a;
+  color: #fff; /* Cambiar color de texto a blanco en modo oscuro */
+}
+
+/* Fondo de secciones en modo oscuro */
+body.dark-theme .header, 
+body.dark-theme .profile, 
+body.dark-theme #section2, 
+body.dark-theme #section3, 
+body.dark-theme #section4, 
+body.dark-theme #hobbies {
+  background-color: #323f4d; /* Fondo más oscuro para las secciones */
+  color: #f0f0f0; /* Color del texto en las secciones del modo oscuro */
+}
+
+/* Cambiar color del ícono en modo oscuro */
+body.dark-theme .nav-bar h2 {
+  color: #00d8ff;
+}
+
+/* Estilo de los textos en modo claro */
+body {
+  background-color: #02404b; /* Fondo ligeramente grisáceo en modo claro */
+  color: #333; /* Color de texto oscuro */
+}
+
+/* Fondo de secciones en modo claro */
+body .header, 
+body .profile, 
+body #section2, 
+body #section3, 
+body #section4, 
+body #hobbies {
+  background-color: #0494a7; /* Fondo blanco en modo claro */
+  color: #c1dfdf; /* Texto oscuro en modo claro */
+  border: 1px solid #b8e70d; /* Agregar borde sutil para destacar las secciones */
+}
+
+/* Estilo cuando se pasa el mouse sobre el ícono */
+body .btn-toggle:hover i {
+  color: #00d8ff;
+}
+
+/* Agregar un estilo bonito al ícono */
+body .btn-toggle i {
+  font-size: 28px; /* Aumentar el tamaño del ícono */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Asegura que el ícono se vea en ambas versiones */
+body.dark-theme .btn-toggle i {
+  color: #534d4d; /* Color del ícono en modo oscuro */
+}
+
+
+  
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+  
+  .nav-bar h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00d8ff;
+    margin-right: 100px;
+  }
+  
+  .nav-bar li {
+    margin-left: 15px;
+  }
+  
+  .nav-bar li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-bar li a:hover {
+    color: #00d8ff;
+  }
+  
+  .nav-bar img {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+  }
+  
+ 
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  
+  .col-lg-6 h1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 200PX;
+    margin-bottom: 15px;
+    margin-right: 100px;
+    color: #fff;
+  }
+  
+  .col-lg-6 h1 .highlight {
+    color: #00d8ff;
+  }
+ 
+  
+  .col-lg-6 .btn {
+    background-color: #086770;
+    color: #fff;
+    border: none;
+    margin-bottom: 180PX;
+    margin-top: 50px;
+    margin-left: -100px;
+    border-radius: 30px;
+    padding: 20px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  .icon {
+    width: 30px;
+    height: auto;
+    margin-top: -130px;
+    margin-left: 20px;
+  }
+
+ 
+ /* Sección general */
+.profile {
+  padding: 50px 20px;
+  background-color: #074247; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+}
+
+.profile .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile .row {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: space-between; /* Espaciado entre las columnas */
+  gap: 20px; /* Espacio entre columnas */
+}
+
+/* Estilos del texto */
+.profile .text {
+  flex: 1; /* Ocupa un espacio proporcional */
+  font-size: 18px;
+}
+
+.profile .text h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #11DCF2; /* Azul claro */
+  text-align: center;
+  margin-top: -100px;
+  margin-bottom: 20px;
+}
+
+.profile .text p {
+  font-size: 25px;
+  line-height: 1.8; /* Mejor espacio entre líneas */
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 15px; /* Espacio entre párrafos */
+}
+.profile .image h3 {
+  font-size: 25px;
+  line-height: 1.8; /* Mejor espacio entre líneas */
+  margin-top: 500px;
+  margin-bottom: 15px; /* Espacio entre párrafos */
+}
+/* Estilos de la imagen */
+.profile .image {
+  flex: 1; /* Ocupa el espacio proporcional */
+  text-align: 0px; /* Mueve la imagen hacia la derecha */
+  position: relative; /* Permite ajustar la posición con top/right */
+  animation: fadeIn 1s ease-out forwards; /* Animación de entrada para la imagen */
+  opacity: 0; /* Comienza invisible */
+  animation-delay: 0.4s; /* Retraso para sincronizar con otros elementos */
+}
+
+/* Animación para hacer que la imagen aparezca al cargar */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Comienza más abajo */
+  }
+  to {
+    opacity: 1; /* Termina completamente visible */
+    transform: translateY(0); /* Regresa a su posición original */
+  }
+}
+
+/* Animación de deslizamiento desde la derecha */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%); /* Comienza desde la derecha */
+    opacity: 0; /* Comienza invisible */
+  }
+  to {
+    transform: translateX(0); /* Llega a su posición original */
+    opacity: 1; /* Se vuelve completamente visible */
+  }
+}
+
+.profile .image img {
+  width: 600px; /* Tamaño grande para la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 30px; /* Bordes redondeados */
+  position: absolute; /* Para moverla dentro de su contenedor */
+  margin-right: -10px;
+  top: -30px; /* Ajusta la posición vertical hacia la parte superior */
+  bottom: 50PX;
+  right: 8; /* Ajusta la posición horizontal hacia la derecha */
+  animation: fadeIn 1s ease-out forwards, slideInRight 1s ease-out forwards; /* Animaciones de entrada */
+  animation-delay: 0.5s; /* Retardo para la animación de deslizamiento */
+}
+
+/* Efecto de hover para la imagen */
+.profile .image img:hover {
+  transform: scale(1.05); /* La imagen crece un 5% */
+  transition: transform 0.2s ease, opacity 0.2s ease; /* Transición suave */
+  opacity: 0.8; /* Reduce la opacidad al pasar el ratón */
+}
+
+
+
+
+
+
+
+
+
+/* Sección del portafolio */
+#section2 {
+  padding: 20px 20px;
+  background-color: #102e31; /* Fondo oscuro */
+}
+
+/* Aseguramos que el contenedor ocupe todo el ancho */
+#section2 .container-fluid {
+  padding: 0;
+  width: 100%;
+}
+
+/* Fila con el contenido centrado y espaciado */
+#section2 .row {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: space-between; /* Espaciado entre las columnas */
+  gap: 10px; /* Espacio entre columnas */
+}
+
+/* Estilos del texto */
+#section2 .text {
+  flex: 1; /* Ocupa un espacio proporcional */
+  font-size: 18px;
+}
+
+/* Estilo para la tarjeta del portafolio */
+#section2 .row .card {
+  width: 100%;
+  max-width: 4000px;
+  padding: 80px;
+  box-shadow: 0px 4px 8px -5px #999;
+  margin: 30px 100px; /* Reducido para acercar la tarjeta a la imagen */
+  border-bottom: 4px solid #dae904;
+  background: #05aac0;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover para la tarjeta */
+#section2 .row .card::after {
+  width: 100%;
+  height: 20px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgb(3, 83, 97);
+  z-index: -1;
+  transition: height 0.4s ease;
+}
+
+#section2 .row .card:hover::after {
+  height: 100%;
+}
+
+#section2 .text h4 {
+  font-size: 40px; /* Título más grande */
+  font-weight: bold;
+  color: #11DCF2; /* Azul claro */
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#section2 .text p {
+  font-size: 30px;
+  line-height: 1.8;
+  text-align: center; /* Alineación a la izquierda */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Estilo de la imagen */
+#section2 .image {
+  flex: 1;
+  position: relative;
+  text-align: right;
+  /* Se ha eliminado la animación de entrada */
+}
+
+#section2 .image img {
+  width: 700px; /* Tamaño grande para la imagen */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px;
+  position: relative;
+  margin-right: -40px;
+  bottom: 30PX;
+  margin-top: 60px;
+  right: 0;
+}
+
+
+#section3 {
+  padding: 50px 20px;
+  background-color: #074247; /* Fondo oscuro */
+}
+
+#section3 .info-section3 {
+  text-align: center; /* Centrado del título */
+  margin-bottom: 40px;
+}
+
+#section3 h3 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 80px;
+  color: #1bc7d6;
+}
+
+#section3 .fila {
+  display: flex;
+  justify-content: space-around; /* Espaciado equitativo entre los cards */
+  gap: 20px; /* Espacio entre cada card */
+  flex-wrap: wrap; /* Permite que los cards se ajusten en pantallas pequeñas */
+}
+
+#section3 .card {
+  width: 100%;
+  max-width: 290px;
+  padding: 50px;
+  box-shadow: 0px 4px 8px -5px #0f0f0f;
+  margin: 0;
+  border-bottom: 4px solid #a3dee0;
+  background: #77b1b8;
+  position: relative;
+  text-align: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  z-index: 2; /* Asegura que el contenido de la tarjeta esté por encima del pseudo-elemento */
+}
+
+#section3 .card:hover {
+  transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+}
+
+#section3 .card img {
+  width: 60px;
+  height: auto;
+  margin-top: -70px;
+  margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+}
+
+
+/* Pseudo-elemento para el efecto de fondo dorado */
+#section3 .card::after {
+  width: 100%;
+  height: 0;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50px;
+  background: transparent;
+  z-index: 1; /* Mantén el pseudo-elemento por debajo del contenido */
+  transition: height 0.4s ease;
+}
+
+#section3 .card:hover::after {
+  height: 100%; /* Aumenta la altura al pasar el ratón */
+}
+
+#section4 {
+  width: 100%;
+  position: relative;
+  text-align: left;
+  padding: 70px 0 100px;
+  background-color: #333; /* Fondo oscuro para contraste */
+}
+
+#section4 h2 {
+  font-size: var(--fontSize-title, 32px);
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+#section4 h2::after {
+  content: "";
+  width: 43%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+}
+
+#section4 h4 {
+  text-align: center;
+  color: #ddd;
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+#section4 .row {
+  display: flex;
+  justify-content: space-between; /* Espacio uniforme entre las tarjetas */
+  flex-wrap: nowrap; /* Mantiene las tarjetas en una sola fila */
+  gap: 20px; /* Espaciado entre tarjetas */
+  overflow-x: auto; /* Habilita desplazamiento horizontal si es necesario */
+  padding: 0 10px;
+}
+
+#section4 .card-destacadas {
+  flex: 0 0 calc(33.33% - 20px); /* Ocupa 1/3 del ancho menos el margen */
+  max-width: calc(33.33% - 20px); /* Limita el ancho */
+  background: #2fafb8;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+#section4 .card-destacadas:hover {
+  transform: scale(1.05);
+}
+
+#section4 .card-destacadas img {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+}
+
+#section4 .card-destacadas .cont-info {
+  background: #2fafb8;
+  padding: 20px;
+  border-radius: 0 0 4px 4px;
+  text-align: center;
+  transition: background 0.4s;
+}
+
+#section4 .card-destacadas .cont-info:hover {
+  background: var(--primary-color, #1d8a91);
+}
+
+.card-destacadas .cont-info h3 {
+  font-size: 25px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.card-destacadas .cont-info p {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Estilo de los botones */
+button {
+  padding: 10px 20px;
+  background-color: #17c9e9; /* Azul Bootstrap */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #07485c; /* Azul más oscuro */
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #095461; /* Azul aún más oscuro */
+  transform: scale(0.95);
+}
+
+
+/* Fondo general de la sección */
+#hobbies {
+  background-color: #074247; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  position: relative; /* Necesario para que los elementos hijos con posición absoluta se ajusten a este contenedor */
+  padding: 50px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilo del título */
+#hobbies .title {
+  font-size: 35px;
+  color: #0ddefa; /* Color turquesa */
+  margin-bottom: 20px;
+  margin-left: -1000PX;
+  margin-top: 50px;
+}
+
+/* Estilo del texto */
+#hobbies .text-container {
+  text-align: center;
+  margin: 10px auto;
+  max-width: 700px; /* Limita el ancho del texto */
+}
+
+#hobbies .text-container p {
+  font-size: 25px;
+  line-height: 1.8;
+  margin-left: -500PX; /* Elimina el margen negativo */
+  text-align: justify; /* Justifica el texto para que quede alineado a ambos márgenes */
+  margin-bottom: 15px; /* Añade un poco de espacio entre los párrafos */
+}
+
+
+/* Contenedor de las imágenes */
+#hobbies .images-container {
+  position: relative; /* Contenedor base */
+  max-width: 500px; /* Tamaño máximo del área de imágenes */
+  margin: 0 auto; /* Centra el contenedor */
+  text-align: center; /* Alinea las imágenes al centro */
+}
+
+/* Imagen principal */
+#hobbies .main-image {
+  width: 270px; /* Ajusta la imagen al tamaño del contenedor */
+  max-width: 300px; /* Tamaño máximo */
+  position: relative;
+  top: -350px; /* Ajusta la superposición vertical */
+  left: 95%; /* Alinea horizontalmente la forma */
+  transform: translateX(-50%); /* Centra la forma horizontalmente */
+  width: 250px;
+  height: 220px;
+  background-color: #10f1f1; /* Color verde/azul */
+  z-index: 2; /* Coloca la forma detrás de la imagen principal */
+  border-radius: 30px; /* Esquinas redondeadas */
+}
+
+/* Forma de fondo detrás de la imagen */
+#hobbies .background-shape {
+  position: absolute;
+  top: -400px; /* Ajusta la superposición vertical */
+  left: 100%; /* Alinea horizontalmente la forma */
+  transform: translateX(-50%); /* Centra la forma horizontalmente */
+  width: 250px;
+  height: 220px;
+  background-color: #10f1f1; /* Color verde/azul */
+  z-index: 1; /* Coloca la forma detrás de la imagen principal */
+  border-radius: 30px; /* Esquinas redondeadas */
+}
+
+
+
+footer{
+  padding: 40px 0;
+  text-align: center;
+  background: #06d7e6;
+}  
+
+
+footer .social-icon {
+  font-size: 24px;
+  color: #ffffff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+ footer .social-icon:hover {
+  color: #00bcd4;
+}
+
+
+
+
+
